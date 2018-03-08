@@ -204,9 +204,12 @@ aggregate_sort_and_limit(Config) ->
   ]),
 
   %test match and sort
-  {true, #{<<"result">> := Res}} = mc_worker_api:command(Connection,
+  {true, #{<<"cursor">> := #{<<"firstBatch">> := Res}}} = mc_worker_api:command(Connection,
     {<<"aggregate">>, Collection, <<"pipeline">>,
-      [{<<"$match">>, {<<"key">>, <<"test">>}}, {<<"$sort">>, {<<"tag">>, 1}}]}),
+      [{<<"$match">>, {<<"key">>, <<"test">>}}, {<<"$sort">>, {<<"tag">>, 1}}],
+      <<"cursor">>, #{}
+    }
+  ),
 
   [
     #{<<"key">> := <<"test">>, <<"value">> := <<"one">>, <<"tag">> := 1},
@@ -216,13 +219,16 @@ aggregate_sort_and_limit(Config) ->
   ] = Res,
 
   %test match & sort with limit
-  {true, #{<<"result">> := Res1}} = mc_worker_api:command(Connection,
+  {true, #{<<"cursor">> := #{<<"firstBatch">> := Res1}}} = mc_worker_api:command(Connection,
     {<<"aggregate">>, Collection, <<"pipeline">>,
       [
         {<<"$match">>, {<<"key">>, <<"test">>}},
         {<<"$sort">>, {<<"tag">>, 1}},
         {<<"$limit">>, 1}
-      ]}),
+      ],
+      <<"cursor">>, #{}
+    }
+  ),
 
   [
     #{<<"key">> := <<"test">>, <<"value">>:= <<"one">>, <<"tag">> := 1}
