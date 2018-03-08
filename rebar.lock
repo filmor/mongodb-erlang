@@ -1,0 +1,10 @@
+{"1.1.0",
+[{<<"bson">>,{pkg,<<"bson_erlang">>,<<"0.3.0">>},0},
+ {<<"pbkdf2">>,{pkg,<<"pbkdf2">>,<<"2.0.0">>},0},
+ {<<"poolboy">>,{pkg,<<"poolboy">>,<<"1.5.1">>},0}]}.
+[
+{pkg_hash,[
+ {<<"bson">>, <<"FD6EC3874EDB1AB6DDC3D9AEDEC479772045883B17666D2BDD6431EEE4548118">>},
+ {<<"pbkdf2">>, <<"11C23279FDED5C0027AB3996CFAE77805521D7EF4BABDE2BD7EC04A9086CF499">>},
+ {<<"poolboy">>, <<"6B46163901CFD0A1B43D692657ED9D7E599853B3B21B95AE5AE0A777CF9B6CA8">>}]}
+].

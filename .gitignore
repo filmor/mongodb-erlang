@@ -6,3 +6,6 @@ logs/
 *.beam
 variables-ct*
 *.iml
+
+rebar3
+_build/
