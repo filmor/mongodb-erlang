@@ -5,7 +5,7 @@
   {registered, []},
   {applications, [kernel, stdlib, bson, crypto, poolboy, pbkdf2]},
   {mod, {mongo_app, []}},
-  {pkg_name, "mongodb_client"},
+  {pkg_name, "mongodb_erlang"},
   {licenses, ["Apache License 2.0"]},
   {links, [
            {"Github", "https://github.com/filmor/mongodb-erlang"},
