@@ -60,7 +60,8 @@ init([Topology, Server, {Host, Port}, Topts, Wopts]) ->
   process_flag(trap_exit, true),
   ConnectTimeoutMS = proplists:get_value(connectTimeoutMS, Topts, 20000),
   HeartbeatFrequencyMS = proplists:get_value(heartbeatFrequencyMS, Topts, 10000),
-  MinHeartbeatFrequencyMS = proplists:get_value(minHeartbeatFrequencyMS, Topts, 1000),
+  % Fixed at 500ms by the SDAM spec
+  MinHeartbeatFrequencyMS = 500,
   gen_server:cast(self(), loop),
   {ok, #state{host = Host, port = Port, topology = Topology, server = Server,
     topology_opts = Topts, worker_opts = Wopts, connect_to = ConnectTimeoutMS,
