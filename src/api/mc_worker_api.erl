@@ -7,6 +7,10 @@
 -include("mongo_protocol.hrl").
 
 -export([
+  start_link/1
+]).
+
+-export([
   connect/0,
   connect/1,
   disconnect/1,
@@ -54,6 +58,12 @@
 %% @doc shortcut for connect/1 with default params.
 connect() ->
   connect([]).
+
+%% @private
+%% @doc For compatibility with poolboy
+-spec start_link(args()) -> {ok, pid()}.
+start_link(Args) ->
+  connect(Args).
 
 %% @doc Make one connection to server, return its pid
 -spec connect(args()) -> {ok, pid()}.
