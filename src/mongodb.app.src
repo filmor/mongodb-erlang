@@ -1,15 +1,11 @@
-{application, mongodb,
- [
-  {description, "Client interface to MongoDB, also known as the driver. See www.mongodb.org"},
-  {vsn, "3.3.3"},
-  {registered, []},
-  {applications, [kernel, stdlib, bson, crypto, poolboy, pbkdf2]},
-  {mod, {mongo_app, []}},
-  {pkg_name, "mongodb_erlang"},
-  {licenses, ["Apache License 2.0"]},
-  {links, [
-           {"Github", "https://github.com/filmor/mongodb-erlang"},
-           {"Upstream", "https://github.com/comtihon/mongodb-erlang"}
-          ]
-  }
- ]}.
+{application,mongodb,
+             [{description,"Client interface to MongoDB, also known as the driver. See www.mongodb.org"},
+              {vsn,"3.4.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib,bson,crypto,poolboy,pbkdf2]},
+              {mod,{mongo_app,[]}},
+              {pkg_name,"mongodb_erlang"},
+              {licenses,["Apache License 2.0"]},
+              {links,[{"Github","https://github.com/filmor/mongodb-erlang"},
+                      {"Upstream",
+                       "https://github.com/comtihon/mongodb-erlang"}]}]}.
